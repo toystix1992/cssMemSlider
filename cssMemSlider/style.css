@@ -8,7 +8,9 @@ body,
 html {
   min-height: 100%;
   min-width: 319px;
+  max-width: 1920px;
   scroll-behavior: smooth;
+  margin: 0 auto;
 }
 
 a {
@@ -18,4 +20,134 @@ a {
 
 ul {
   list-style: none;
+}
+body {
+  background: linear-gradient(#7864e6, #9198e5);
+}
+#slider-wrapper {
+  width: 70%;
+  margin: 4vh auto;
+  display: grid;
+  grid-template-areas: "img  img"
+                    "disc  controler";
+  grid-template-columns: 1fr, 15rem;
+  grid-row-gap: 5vh;
+}
+.slide-radio {
+  display: none;
+}
+.slider-img-wrapper {
+  grid-area: img;
+  width: 100%;
+  overflow: hidden;
+}
+.slider-img-container {
+  display: flex;
+  justify-content: flex-start;
+  height: 80vh;
+  width: 500%;
+}
+.slide-img {
+  transition: 0.5s cubic-bezier(0.17,0.67,0.83,0.67);
+  width:20%;
+  border-radius: 0.4rem;
+}
+.slide-img1 {
+  background: #b11e9d2c url(./assets/1592483425149739321.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.slide-img2 {
+  background: url(./assets/1614704065178268530.png);
+}
+.slide-img3 {
+  background: url(./assets/1619515561125518612.png);
+}
+.slide-img4 {
+  background: url(./assets/22231.jpg);
+}
+.slide-img5 {
+  background: url(./assets/web-designer-developer-jokes-humour-funny-13.jpg);
+}
+
+.slider-controls-container {
+  position: relative;
+  z-index: 10;
+  grid-area: controler;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 0.2rem;
+}
+.slider-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;;
+}
+.slider-control:hover {
+  cursor: pointer;
+}
+.controller {
+  border: 0.1rem solid #5c0764;
+  background-color: #5c0764;
+  border-radius: 50%;
+  width: 0.7rem;
+  height: 0.7rem;
+  transition: 0.2s cubic-bezier(.17,.67,.83,.67);
+}
+.controller:active {
+  opacity: 0.7;
+}
+.slider-control:hover .controller {
+  border: 0.2rem solid rgb(128, 9, 9);
+  background-color: white;
+  cursor: pointer;
+}
+
+.slider-discription-wrapper {
+  grid-area: disc;
+  width: 100%;
+  overflow: hidden;
+}
+.slider-discription-container {
+  display: flex;
+  width: 500%;
+}
+.slider-discr {
+  width: 20%;
+  background: #595b7517;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  #slider-wrapper {
+    width: 80%;
+    margin: 4vh auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .slider-img-container {
+    height: 60vh;
+  }
+}
+@media (max-width: 520px) {
+  #slider-wrapper {
+    margin: 3vh auto;
+  }
+  .slider-img-container {
+    height: 45vh;
+  }
+}
+@media (max-width: 450px) {
+  #slider-wrapper {
+    margin: 1vh auto;
+  }
+  .slider-img-container {
+    height: 30vh;
+  }
 }
