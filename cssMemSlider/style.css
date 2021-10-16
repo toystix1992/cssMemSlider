@@ -28,8 +28,9 @@ body {
   width: 70%;
   margin: 4vh auto;
   display: grid;
-  grid-template-areas: "img  img"
-                    "disc  controler";
+  grid-template-areas:
+    "img  img"
+    "disc  controler";
   grid-template-columns: 1fr, 15rem;
   grid-row-gap: 5vh;
 }
@@ -38,7 +39,6 @@ body {
 }
 .slider-img-wrapper {
   grid-area: img;
-  width: 100%;
   overflow: hidden;
 }
 .slider-img-container {
@@ -46,29 +46,62 @@ body {
   justify-content: flex-start;
   height: 80vh;
   width: 500%;
+  border-radius: 0.4rem;
+  background: #7d0891;
 }
 .slide-img {
-  transition: 0.5s cubic-bezier(0.17,0.67,0.83,0.67);
-  width:20%;
-  border-radius: 0.4rem;
+  transition: 1s cubic-bezier(.65, 1.95, 0.03, 0.32);
+  width: 100%;
 }
 .slide-img1 {
-  background: #b11e9d2c url(./assets/1592483425149739321.png);
+  background: #7d0891 url(./assets/1592483425149739321.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 .slide-img2 {
-  background: url(./assets/1614704065178268530.png);
+  background: #7d0891 url(./assets/1614704065178268530.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .slide-img3 {
-  background: url(./assets/1619515561125518612.png);
+  background: #7d0891 url(./assets/1619515561125518612.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .slide-img4 {
-  background: url(./assets/22231.jpg);
+  background: #7d0891 url(./assets/22231.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .slide-img5 {
-  background: url(./assets/web-designer-developer-jokes-humour-funny-13.jpg);
+  background: #7d0891
+    url(./assets/web-designer-developer-jokes-humour-funny-13.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slide-radio1:checked ~ .slider-img-wrapper .slider-img-container .slide-img1 {
+  transform: translate(0%);
+}
+
+.slide-radio2:checked ~ .slider-img-wrapper .slider-img-container .slide-img2 {
+  transform: translate(-100%, 0);
+}
+
+.slide-radio3:checked ~ .slider-img-wrapper .slider-img-container .slide-img3 {
+  transform: translate(-200%, 0);
+}
+
+.slide-radio4:checked ~ .slider-img-wrapper .slider-img-container .slide-img4 {
+  transform: translate(-300%, 0);
+}
+.slide-radio5:checked ~ .slider-img-wrapper .slider-img-container .slide-img5 {
+  transform: translate(-400%, 0);
 }
 
 .slider-controls-container {
@@ -84,26 +117,36 @@ body {
   justify-content: center;
   align-items: center;
   width: 1rem;
-  height: 1rem;;
+  height: 1rem;
 }
 .slider-control:hover {
   cursor: pointer;
 }
 .controller {
-  border: 0.1rem solid #5c0764;
+  border: 0.2rem solid #5c0764;
   background-color: #5c0764;
   border-radius: 50%;
   width: 0.7rem;
   height: 0.7rem;
-  transition: 0.2s cubic-bezier(.17,.67,.83,.67);
+  transition: 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 .controller:active {
   opacity: 0.7;
 }
 .slider-control:hover .controller {
-  border: 0.2rem solid rgb(128, 9, 9);
+  border: 0.2rem solid white;
   background-color: white;
   cursor: pointer;
+}
+.slide-radio1:checked ~ .slider-controls-container .slider-control1 .controller,
+.slide-radio2:checked ~ .slider-controls-container .slider-control2 .controller,
+.slide-radio3:checked ~ .slider-controls-container .slider-control3 .controller,
+.slide-radio4:checked ~ .slider-controls-container .slider-control4 .controller,
+.slide-radio4:checked
+  ~ .slider-controls-container
+  .slider-control5
+  .controller {
+  background-color: transparent;
 }
 
 .slider-discription-wrapper {
@@ -130,6 +173,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    grid-row-gap: 2vh;
   }
   .slider-img-container {
     height: 60vh;
@@ -138,6 +182,7 @@ body {
 @media (max-width: 520px) {
   #slider-wrapper {
     margin: 3vh auto;
+    grid-row-gap: 1vh;
   }
   .slider-img-container {
     height: 45vh;
@@ -146,6 +191,7 @@ body {
 @media (max-width: 450px) {
   #slider-wrapper {
     margin: 1vh auto;
+    grid-row-gap: 1vh;
   }
   .slider-img-container {
     height: 30vh;
