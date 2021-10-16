@@ -217,6 +217,9 @@ body {
     overflow: hidden;
     grid-row-gap: 2vh;
   }
+  .slider-img-wrapper {
+    width: 100%;
+  }
   .slider-img-container {
     height: 60vh;
   }
